@@ -1,0 +1,5 @@
+CMU_ARCTIC/
+*.wav
+
+.venv/
+__pychache__/
