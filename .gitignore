@@ -2,4 +2,4 @@ CMU_ARCTIC/
 *.wav
 
 .venv/
-__pychache__/
+__pycache__/
