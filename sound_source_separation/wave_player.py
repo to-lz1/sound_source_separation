@@ -12,6 +12,5 @@ def play(wav_file):
 
 
 if __name__ == '__main__':
-    # load sample data(download it before run this code. see: download.py)
     with wave.open("./CMU_ARCTIC/cmu_us_axb_arctic/wav/arctic_a0004.wav") as wav:
         play(wav)
