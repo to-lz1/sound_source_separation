@@ -1,5 +1,13 @@
 import wave
 
+import numpy as np
+
+
+def normalize(data):
+    """normalize audio signal to int16 array(that can be wrote as 16bit .wav file by write() method)."""
+    data = data / data.max()
+    return (data * np.iinfo(np.int16).max).astype(np.int16)
+
 
 def write(name: str, data, f_rate=44100):
     with wave.open(name, 'w') as wave_out:

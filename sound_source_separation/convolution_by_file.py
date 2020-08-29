@@ -15,14 +15,13 @@ with wave.open("./CMU_ARCTIC/cmu_us_aew_arctic/wav/arctic_a0001.wav") as wav_spe
 
     # calculate convolution, and normalize to int16 array
     convoluted_data = signal.convolve(speech_data, impulse_data, mode='full')
-    convoluted_data = convoluted_data / convoluted_data.max()
-    convoluted_data = (convoluted_data * np.iinfo(np.int16).max).astype(np.int16)
+    convoluted_data = wave_writer.normalize(convoluted_data)
 
     wave_writer.write("sample_convolution.wav", convoluted_data, f_rate=wav_speech.getframerate())
 
 
-with wave.open("sample_convolution.wav") as wav_speech:
-    wave_loader.play(wav_speech)
+with wave.open("sample_convolution.wav") as wav:
+    wave_loader.play(wav)
 
 with wave.open("sample_convolution.wav") as wav:
     specgram.show_spectrogram(wav)
