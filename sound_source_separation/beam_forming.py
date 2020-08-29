@@ -11,9 +11,9 @@ def calculate_steering_vector(mic_alignments, source_locations, frequencies,
 
     Parameters
     ----------
-    mic_alignments: 3 x M  dimensional ndarray [[x,y,z],[x,y,z]]
-    source_locations: 3 x Ns dimensional ndarray [[x,y,z],[x,y,z] ]
-    frequencies: Nk dimensional array (fourier transformed audio signal) [f1,f2,f3...]
+    mic_alignments: 3 x M  dimensional ndarray [[x1,...xM],[y1,...,yM],[z1,...zM]]
+    source_locations: 3 x Ns dimensional ndarray [[x1,...xNs],[y1,...,yNs],[z1,...zNs]]
+    frequencies: Nk dimensional array (of fourier transformed audio signal) [f1,f2,f3...]
     sound_speed: [m/s]
     use_far: if set to True, steering vector is calculated based on far assumption
 
