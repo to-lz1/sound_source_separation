@@ -37,7 +37,7 @@ with wave.open("./CMU_ARCTIC/cmu_us_aew_arctic/wav/arctic_a0001.wav") as wav_spe
     wave_writer.write("sample_ir.wav", rir_data, 16000)
 
     room.simulate(snr=95.)
-    signal = room.mic_array.signals[1]  # simulated signal of mic 0
+    signal = room.mic_array.signals[0]  # simulated signal of mic 0
     signal = wave_writer.normalize(signal)
     wave_writer.write("sample_simulated.wav", signal, wav_speech_1.getframerate())
 
