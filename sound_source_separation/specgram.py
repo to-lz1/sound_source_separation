@@ -2,10 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import wave
 
+from sound_source_separation.wave_loader import load_to_mono_array
+
 
 def show_spectrogram(wav_file):
-    data = wav_file.readframes(wav_file.getnframes())
-    data = np.frombuffer(data, dtype=np.int16)
+    data = load_to_mono_array(wav_file)
 
     fig = plt.figure(figsize=(10, 4))
     spectrum, freq, t, im = plt.specgram(data,

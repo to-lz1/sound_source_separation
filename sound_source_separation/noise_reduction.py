@@ -3,7 +3,7 @@ import wave
 import numpy as np
 import scipy.signal as sp
 
-from sound_source_separation import wave_writer, wave_player, specgram
+from sound_source_separation import wave_writer, wave_loader, specgram
 from sound_source_separation.stft import short_term_fourier_transform
 
 with wave.open("sample_noise_mixed.wav") as wav:
@@ -28,7 +28,7 @@ with wave.open("sample_noise_mixed.wav") as wav:
     wave_writer.write("sample_noise_reduced.wav", istft_data, wav.getframerate())
 
 with wave.open("sample_noise_reduced.wav") as wav:
-    wave_player.play(wav)
+    wave_loader.play(wav)
 
 with wave.open("sample_noise_reduced.wav") as wav:
     specgram.show_spectrogram(wav)
